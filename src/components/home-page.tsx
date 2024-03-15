@@ -4,139 +4,161 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
+import Image from 'next/image'
+import cuadro from '@/../public/instal-electricas.jpg'
+import caldera from '@/../public/cirima-mantenimiento.jpg'
+import Header from "./Header/Header"
+
+const services = [
+  {
+    titulo: "Mantenimiento",
+    descripcion: "Mantenimientos de salas de calderas completas de gas, gasóleo, solar en comunidades de propietarios, empresas, instituciones públicas…"
+  },
+  {
+    titulo: "Revisiones",
+    descripcion: "Realizamos las revisiones correctivas y preventivas en las instalaciones."
+  },
+  {
+    titulo: "Transformaciones",
+    descripcion: "Transformaciones de gasóleo a gas, reformas integrales de salas de calderas, puesta de marcha de nueva instalación e implantación de telegestiones."
+  }
+]
+const electricalServices = [
+  {
+    titulo: "Cuadros electricos",
+    descripcion: "Cuadros eléctricos generales completos con autómatas para alumbrados, regulación de sistemas de calefacción, climatización y agua caliente sanitaria"
+  },
+  {
+    titulo: "Led",
+    descripcion: "Instalación de luminarias con lámparas LED."
+  },
+  {
+    titulo: "Automaticaciones",
+    descripcion: "Detectores de movimiento, Centralización de contadores, "
+  },
+  {
+    titulo: "Boletines",
+    descripcion: "Elaboración de boletines y certificación de la instalación."
+  },
+  {
+    titulo: "Correcion de gastos",
+    descripcion: "Corrección de gastos por energía reactiva en facturas eléctricas."
+  }
+
+]
 export function HomePage() {
   return (
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
-      <header className="flex items-center py-6">
-        <div className="container flex items-center gap-4">
-          <Link className="flex items-center gap-2" href="#">
-            <FlagIcon className="h-6 w-6" />
-            <span className="text-lg font-semibold">Electrician</span>
-          </Link>
-          <nav className="ml-auto flex items-center gap-4 text-sm font-medium">
-            <Link className="text-gray-900 dark:text-gray-100 px-2.5 py-2 rounded-md" href="#">
-              Home
-            </Link>
-            <Link className="text-gray-900 dark:text-gray-100 px-2.5 py-2 rounded-md" href="#">
-              Services
-            </Link>
-            <Link className="text-gray-900 dark:text-gray-100 px-2.5 py-2 rounded-md" href="#">
-              Testimonials
-            </Link>
-            <Link className="text-gray-900 dark:text-gray-100 px-2.5 py-2 rounded-md" href="#">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
       <main className="grid items-center gap-12">
+
         <section className="overflow-hidden rounded-2xl">
           <div className="relative aspect-[2/1]">
-            <img
+            <Image
               alt="Hero"
               className="object-cover w-full rounded-t-2xl"
               height={600}
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "1200/600",
-                objectFit: "cover",
-              }}
+              src={cuadro}
               width={1200}
             />
             <div className="absolute inset-0 flex items-center justify-center p-6 text-center bg-black bg-opacity-50 backdrop-blur-sm">
               <div className="grid gap-6">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-100">Professional Electrical Services</h1>
-                <p className="mx-auto max-w-2xl text-gray-200">
-                  Trusted electrician providing reliable solutions for your home or business.
+                <h1 className="text-4xl lg:text-8xl font-bold tracking-tight text-gray-100">Instalaciones eléctricas</h1>
+                <p className="mx-auto max-w-2xl lg:text-3xl text-gray-200">
+                  Mantenimientos & Reparaciones.
                 </p>
               </div>
             </div>
           </div>
         </section>
-        <section className="grid items-center gap-6">
-          <div className="container grid items-center gap-6 text-center md:text-left">
-            <div className="grid items-center gap-2">
-              <BoldIcon className="w-8 h-8 flex-shrink-0" />
-              <h2 className="text-3xl font-bold tracking-tight">Electrical Installations & Upgrades</h2>
-            </div>
-            <p className="mx-auto max-w-3xl text-gray-500 md:text-left">
-              We offer professional electrical installation services for homeowners and businesses. Whether you need new
-              lighting fixtures, ceiling fans, or complete wiring for a renovation, we've got you covered.
-            </p>
-          </div>
-          <div className="container">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-6">
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Lighting Installation</span>
-                  <span className="font-semibold text-gray-500">Description:</span>
-                  <span>Professional installation of indoor and outdoor lighting fixtures.</span>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Electrical Panel Upgrades</span>
-                  <span className="font-semibold text-gray-500">Description:</span>
-                  <span>Upgrading your electrical panel to ensure safety and meet increased power demands.</span>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Commercial Wiring</span>
-                  <span className="font-semibold text-gray-500">Description:</span>
-                  <span>
-                    Professional wiring services for commercial properties, including offices and retail spaces.
-                  </span>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-        <section className="grid items-center gap-6">
+        <section className="my-40 md:mx-32 grid items-center gap-6">
           <div className="container grid items-center gap-6 text-center md:text-left">
             <div className="grid items-center gap-2">
               <SettingsIcon className="w-8 h-8 flex-shrink-0" />
-              <h2 className="text-3xl font-bold tracking-tight">Electrical Repairs & Troubleshooting</h2>
+              <h2 className="text-3xl font-bold tracking-tight">Instalaciones electricas y optimicaciones</h2>
             </div>
             <p className="mx-auto max-w-3xl text-gray-500 md:text-left">
-              When you need electrical repairs, you can count on our expertise. We diagnose and fix electrical issues to
-              ensure the safety and reliability of your electrical system.
+              Especialistas en instalaciones eléctricas y reparaciones de todo tipo en empresas, comunidades de propietarios, administradores e instituciones públicas.
             </p>
           </div>
+
           <div className="container">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-6">
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Outlet Repair & Replacement</span>
+              {electricalServices.map(service => <Card>
+                <CardContent key={service.titulo} className="flex-col flex p-3 gap-[6px] text-sm h-48">
+                  <span className="font-bold mb-6 text-lg">{service.titulo}</span>
                   <span className="font-semibold text-gray-500">Description:</span>
-                  <span>Repairing or replacing outlets to ensure proper function and safety.</span>
+                  <span>{service.descripcion}</span>
                 </CardContent>
               </Card>
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Breaker & Fuse Repair</span>
-                  <span className="font-semibold text-gray-500">Description:</span>
-                  <span>
-                    Diagnosing and repairing issues with circuit breakers and fuses to prevent electrical hazards.
-                  </span>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Lighting Troubleshooting</span>
-                  <span className="font-semibold text-gray-500">Description:</span>
-                  <span>Identifying and fixing issues with lighting systems to restore proper illumination.</span>
-                </CardContent>
-              </Card>
+              )}
             </div>
           </div>
         </section>
+
+        <section className="my-40 md:mx-32 grid items-center gap-6">
+          <div className="container grid items-center gap-8 text-center md:text-left">
+            <div className="grid items-center gap-2 text-center">
+              <h2 className="text-3xl md:text-6xl font-bold tracking-tight">Cirima</h2>
+            </div>
+            <p className="mx-auto md:text-xl max-w-3xl text-gray-500 md:text-left">
+              Somos una empresa que está dedicada desde hace más de 40 años al mantenimiento de instalaciones de calefacción, agua caliente sanitaria y a trabajos de electricidad, tanto en instalaciones nuevas como reparaciones.
+              Contamos con la certificación <b>ISO 9001 </b> y pertenecemos a la <b>Asociación de Mantenedores de calor y frío de Navarra </b>.
+            </p>
+            <Link
+              className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-blue-200 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+              href="mailto:cirima@cirima.es"
+            >
+              Contactanos
+            </Link>
+          </div>
+        </section>
+
+        <section className="overflow-hidden rounded-2xl">
+          <div className="relative aspect-[2/1]">
+            <Image
+              alt="Hero"
+              className="object-cover w-full rounded-t-2xl"
+              height={600}
+              src={caldera}
+              width={1200}
+            />
+            <div className="absolute inset-0 flex items-center justify-center p-6 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+              <div className="grid gap-6">
+                <h1 className="text-4xl font-bold tracking-tight text-gray-100">Instalaciones de calefacción</h1>
+                <p className="mx-auto max-w-2xl text-gray-200">
+                  Mantenimientos & Reparaciones.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="my-40 md:mx-32 grid items-center gap-6">
+          <div className="container grid items-center gap-6 text-center md:text-left">
+            <div className="grid items-center gap-2">
+              <WrenchIcon className="w-8 h-8 flex-shrink-0" />
+              <h2 className="text-3xl font-bold tracking-tight">Instalaciones de calefacción</h2>
+            </div>
+            <p className="mx-auto max-w-3xl text-gray-500 md:text-left">
+              En CIRIMA somos especialistas en instalaciones de calefacción, tenemos todos los requisitos como empresa autorizada para realizar el servicio de mantenimiento de sala calderas por la que toda instalación superior a 70 Kw está obligada a realizar cumpliendo la normativa RITE y por supuesto, satisfacción, confort y seguridad al cliente.
+            </p>
+          </div>
+
+          <div className="container">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-6">
+              {services.map(service => <Card>
+                <CardContent key={service.titulo} className="flex-col flex p-3 gap-[6px] text-sm h-48">
+                  <span className="font-bold mb-6 text-lg">{service.titulo}</span>
+                  <span className="font-semibold text-gray-500">Description:</span>
+                  <span>{service.descripcion}</span>
+                </CardContent>
+              </Card>
+              )}
+            </div>
+          </div>
+        </section>
+
         <section className="grid items-center gap-6">
           <div className="container grid items-center gap-6 text-center md:text-left">
             <div className="grid items-center gap-2">
@@ -382,25 +404,6 @@ export function HomePage() {
 }
 
 
-function FlagIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-      <line x1="4" x2="4" y1="22" y2="15" />
-    </svg>
-  )
-}
 
 
 function BoldIcon(props) {
