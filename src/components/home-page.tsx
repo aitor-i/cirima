@@ -8,6 +8,10 @@ import Image from 'next/image'
 import cuadro from '@/../public/instal-electricas.jpg'
 import caldera from '@/../public/cirima-mantenimiento.jpg'
 import Header from "./Header/Header"
+import certificadoER from '@/../public/certificado-er-cirima.jpg'
+import certificadoIqnet from '@/../public/certificado-iqnet.jpg'
+import ebara from '@/../public/ebara-logo.jpg'
+import arc from '@/../public/logo-arc.jpg'
 
 const services = [
   {
@@ -125,8 +129,8 @@ export function HomePage() {
             />
             <div className="absolute inset-0 flex items-center justify-center p-6 text-center bg-black bg-opacity-50 backdrop-blur-sm">
               <div className="grid gap-6">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-100">Instalaciones de calefacción</h1>
-                <p className="mx-auto max-w-2xl text-gray-200">
+                <h1 className="text-4xl lg:text-8xl font-bold tracking-tight text-gray-100">Instalaciones de calefacción</h1>
+                <p className="mx-auto max-w-2xl lg:text-3xl text-gray-200">
                   Mantenimientos & Reparaciones.
                 </p>
               </div>
@@ -163,47 +167,48 @@ export function HomePage() {
           <div className="container grid items-center gap-6 text-center md:text-left">
             <div className="grid items-center gap-2">
               <WrenchIcon className="w-8 h-8 flex-shrink-0" />
-              <h2 className="text-3xl font-bold tracking-tight">Electrical Maintenance Services</h2>
+              <h2 className="text-3xl font-bold tracking-tight">Certificados y distribuidores</h2>
             </div>
-            <p className="mx-auto max-w-3xl text-gray-500 md:text-left">
-              Regular maintenance is essential for the safety and performance of your electrical system. We offer
-              comprehensive maintenance services to keep your electrical system in top condition.
-            </p>
           </div>
           <div className="container">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-6">
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Electrical Inspection</span>
-                  <span className="font-semibold text-gray-500">Description:</span>
-                  <span>
-                    Thorough inspection of the electrical system to identify potential issues and ensure compliance with
-                    safety standards.
-                  </span>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Surge Protection Installation</span>
-                  <span className="font-semibold text-gray-500">Description:</span>
-                  <span>
-                    Installing surge protection devices to safeguard electronic devices and appliances from power
-                    surges.
-                  </span>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="grid gap-2 text-sm">
-                  <span className="font-semibold text-gray-500">Service:</span>
-                  <span>Wire & Cable Maintenance</span>
-                  <span className="font-semibold text-gray-500">Description:</span>
-                  <span>
-                    Cleaning and maintenance of wires and cables to prevent corrosion and ensure optimal conductivity.
-                  </span>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 items-center gap-6">
+
+              <a href={"@/../public/CertificadoER-1453-2005_ES_2020-07-03.pdf"} download={"Certificado ER"}>
+                <Image
+                  className="rounded-lg h-64 w-64"
+                  alt="certificadoER"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  src={certificadoER} />
+
+              </a>
+              <a href={"@/../public/CertificadoER-1453-2005_ES_2020-07-03.pdf"} download={"Certificado ER"}>
+                <Image
+                  className="rounded-lg h-64 w-64"
+                  alt="certificadoER"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  src={certificadoIqnet} />
+
+              </a>
+              <Image
+                className="rounded-lg h-64"
+                alt="certificadoER"
+                style={{
+                  // objectFit: "cover",
+                }}
+                src={ebara} />
+
+              <Image
+                className="rounded-lg h-64 w-64"
+                style={{
+                  // objectFit: "cover",
+                }}
+                alt="certificadoER"
+                src={arc} />
+
             </div>
           </div>
         </section>
