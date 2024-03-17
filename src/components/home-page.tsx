@@ -12,6 +12,7 @@ import { HeatingServices } from "./services/HeatingServices/HeatingServices"
 
 import dynamic from "next/dynamic"
 import ElectricServices from "./services/ElectricServices/ElectricServices"
+import ContactInfo from "./ContactInfo/ContactInfo"
 
 
 const ContactForm = dynamic(() => import('./ContactForm/ContactForm'), { ssr: false })
@@ -95,6 +96,11 @@ export function HomePage() {
         </section>
 
         <section className="overflow-hidden rounded-2xl">
+          <div className="grid items-center mb-4 gap-2">
+            <LocateIcon />
+            <h2 className="text-3xl font-bold tracking-tight">Encuentranos aqui</h2>
+          </div>
+
           <div className="relative aspect-[2/1]">
             <img
               alt="Testimonials"
@@ -107,19 +113,16 @@ export function HomePage() {
               }}
               width={1200}
             />
-            <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-              <div className="grid gap-6">
-                <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
-                  Satisfied Customers, Glowing Reviews
-                </h2>
-                <p className="mx-auto max-w-2xl text-gray-500">
-                  Our customers appreciate our dedication to quality and professionalism. Here's what they have to say
-                  about our services:
-                </p>
-              </div>
-            </div>
           </div>
         </section>
+
+        <section className="grid items-center grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="container max-w-lg">
+            <ContactForm />
+          </div>
+          <ContactInfo />
+        </section>
+
         <section className="grid items-center gap-6">
           <div className="container">
             <div className="grid md:grid-cols-2 gap-6">
@@ -154,36 +157,8 @@ export function HomePage() {
             </div>
           </div>
         </section>
-        <section className="grid items-center gap-6">
-          <div className="container grid items-center gap-6 text-center md:text-left">
-            <div className="grid items-center gap-2">
-              <MailIcon className="w-8 h-8 flex-shrink-0" />
-              <h2 className="text-3xl font-bold tracking-tight">Contact Us for Expert Electrical Services</h2>
-            </div>
-            <p className="mx-auto max-w-3xl text-gray-500 md:text-left">
-              Ready to experience the best in electrical services? Contact us to discuss your project or schedule a
-              service call. We're here to provide the expertise and solutions you need.
-            </p>
-          </div>
-          <div className="container max-w-lg">
-            <div className="grid items-center gap-4">
-              <div className="grid items-center gap-2">
-                <LocateIcon
-                  className="w-6 h-6 opacity-50" />
-                <span className="text-sm leading-none">123 Main St, Cityville</span>
-              </div>
-              <div className="grid items-center gap-2">
-                <PhoneIcon className="w-6 h-6 opacity-50" />
-                <span className="text-sm leading-none">(555) 123-4567</span>
-              </div>
-              <div className="grid items-center gap-2">
-                <MailIcon className="w-6 h-6 opacity-50" />
-                <span className="text-sm leading-none">info@example.com</span>
-              </div>
-            </div>
-            <ContactForm />
-          </div>
-        </section>
+
+
       </main>
       <footer className="grid items-center py-12">
         <div className="container grid items-center gap-4 text-center sm:text-left">
