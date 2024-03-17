@@ -93,75 +93,7 @@ export function HomePage() {
             </div>
           </div>
         </section>
-        <section className="overflow-hidden rounded-2xl">
-          <div className="relative aspect-[2/1]">
-            <img
-              alt="Services"
-              className="object-cover w-full rounded-t-2xl"
-              height={600}
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "1200/600",
-                objectFit: "cover",
-              }}
-              width={1200}
-            />
-            <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-              <div className="grid gap-6">
-                <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
-                  Quality Electrical Services
-                </h2>
-                <p className="mx-auto max-w-2xl text-gray-500">
-                  Experienced in providing a wide range of electrical services to meet your needs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="grid items-center gap-6">
-          <div className="container grid items-center gap-6 text-center md:text-left">
-            <div className="grid items-center gap-2">
-              <StarIcon className="w-8 h-8 flex-shrink-0" />
-              <h2 className="text-3xl font-bold tracking-tight">Trusted & Reliable Electrician</h2>
-            </div>
-            <p className="mx-auto max-w-3xl text-gray-500 md:text-left">
-              Our team is dedicated to providing exceptional service, and our customers' satisfaction is our top
-              priority. We are committed to professionalism, quality workmanship, and safety in every project we
-              undertake.
-            </p>
-          </div>
-          <div className="container grid md:grid-cols-2 gap-6">
-            <div className="grid items-center gap-4">
-              <img
-                alt="Team"
-                className="rounded-full"
-                height={400}
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "400/400",
-                  objectFit: "cover",
-                }}
-                width={400}
-              />
-            </div>
-            <div className="grid items-center gap-4">
-              <ul className="grid gap-2">
-                <li className="grid gap-1.5">
-                  <CheckIcon className="w-4 h-4 opacity-50" />
-                  <span className="text-sm leading-none">Licensed & Insured Electricians</span>
-                </li>
-                <li className="grid gap-1.5">
-                  <CheckIcon className="w-4 h-4 opacity-50" />
-                  <span className="text-sm leading-none">Safety is Our Top Priority</span>
-                </li>
-                <li className="grid gap-1.5">
-                  <CheckIcon className="w-4 h-4 opacity-50" />
-                  <span className="text-sm leading-none">Courteous & Professional Service</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
+
         <section className="overflow-hidden rounded-2xl">
           <div className="relative aspect-[2/1]">
             <img
