@@ -55,8 +55,8 @@ export const HeatingServices = (props: {}) => {
 
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center gap-6">
-            {services.map(service => <Card>
-              <CardContent key={service.titulo} className="flex-col flex p-3 gap-[6px] text-sm h-48">
+            {services.map(service => <Card key={service.titulo}>
+              <CardContent className="flex-col flex p-3 gap-[6px] text-sm h-48">
                 <span className="font-bold mb-6 text-lg">{service.titulo}</span>
                 <span className="font-semibold text-gray-500">Description:</span>
                 <span>{service.descripcion}</span>
