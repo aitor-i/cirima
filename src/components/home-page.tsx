@@ -16,6 +16,7 @@ import ContactInfo from "./ContactInfo/ContactInfo"
 
 
 const ContactForm = dynamic(() => import('./ContactForm/ContactForm'), { ssr: false })
+const MapComponent = dynamic(() => import('./MapComponent/MapComponent'), { ssr: false })
 
 export function HomePage() {
   return (
@@ -25,7 +26,7 @@ export function HomePage() {
 
         <ElectricServices />
 
-        <section className="my-40 md:mx-32 grid items-center gap-6">
+        <section className=" my-40 md:mx-32 grid items-center gap-6">
           <div className="container grid items-center gap-8 text-center md:text-left">
             <div className="grid items-center gap-2 text-center">
               <h2 className="text-3xl md:text-6xl font-bold tracking-tight">Cirima</h2>
@@ -35,7 +36,7 @@ export function HomePage() {
               Contamos con la certificación <b>ISO 9001 </b> y pertenecemos a la <b>Asociación de Mantenedores de calor y frío de Navarra </b>.
             </p>
             <Link
-              className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-blue-200 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+              className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border  border-gray-200 bg-blue-200 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
               href="mailto:cirima@cirima.es"
             >
               Contactanos
@@ -100,19 +101,8 @@ export function HomePage() {
             <LocateIcon />
             <h2 className="text-3xl font-bold tracking-tight">Encuentranos aqui</h2>
           </div>
-
-          <div className="relative aspect-[2/1]">
-            <img
-              alt="Testimonials"
-              className="object-cover w-full rounded-t-2xl"
-              height={600}
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "1200/600",
-                objectFit: "cover",
-              }}
-              width={1200}
-            />
+          <div className="relative rounded-lg aspect-[2/1]">
+            {/* <MapComponent /> */}
           </div>
         </section>
 
@@ -124,34 +114,34 @@ export function HomePage() {
         </section>
 
         <section className="grid items-center gap-6">
+          <div className="grid items-center mb-4 gap-2">
+            <StarIcon />
+            <h2 className="text-3xl font-bold tracking-tight">La satisfaccion de nuestros clientes </h2>
+          </div>
           <div className="container">
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="grid items-center gap-4 px-6 py-6">
                 <CardContent className="text-center">
                   <div className="mx-auto w-12 h-12 text-2xl" />
                   <blockquote className="mt-4 text-lg font-medium text-gray-500">
-                    The electrician from this company was prompt, professional, and very knowledgeable. They quickly
-                    identified the issue with my circuit and had it fixed in no time. I was impressed by their attention
-                    to detail and courteous service. I highly recommend them for any electrical work.
+                    Son muy atentos y tienen remanentes de cosas desaparecidas o difíciles de encontrar
                   </blockquote>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-2 text-sm">
-                  <div className="font-medium">Alice Johnson</div>
-                  <div className="text-gray-500">Residential Customer</div>
+                  <div className="font-medium">Juan Alfonso Revenga Caso</div>
+                  <div className="text-gray-500">Reseñas de Google</div>
                 </CardFooter>
               </Card>
               <Card className="grid items-center gap-4 px-6 py-6">
                 <CardContent className="text-center">
                   <div className="mx-auto w-12 h-12 text-2xl" />
                   <blockquote className="mt-4 text-lg font-medium text-gray-500">
-                    I hired this company to upgrade the lighting in my restaurant, and I'm extremely satisfied with the
-                    results. The new lighting has transformed the ambiance of the place, and my customers love it. The
-                    team was professional, and the work was completed on time. I couldn't be happier with the service.
+                    Muy buena atención, consejos y explicaciones , tanto del personal de tienda como del técnico que acudió a mi domicilio.
                   </blockquote>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-2 text-sm">
-                  <div className="font-medium">Mark Davis</div>
-                  <div className="text-gray-500">Restaurant Owner</div>
+                  <div className="font-medium">Angel Fernåndez Gavilån</div>
+                  <div className="text-gray-500">Reseñas de Google</div>
                 </CardFooter>
               </Card>
             </div>
