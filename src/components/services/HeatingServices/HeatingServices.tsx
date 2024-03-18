@@ -30,6 +30,7 @@ export const HeatingServices = (props: {}) => {
             height={600}
             src={caldera}
             width={1200}
+            placeholder='blur'
           />
           <div className="absolute inset-0 flex items-center justify-center p-6 text-center bg-black bg-opacity-50 backdrop-blur-sm">
             <div className="grid gap-6">

@@ -28,9 +28,6 @@ export function HomePage() {
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
       <Header />
       <main className="grid items-center gap-12">
-
-        <ElectricServices />
-
         <section className=" my-40 md:mx-32 grid items-center gap-6">
           <div className="container grid items-center gap-8 text-center md:text-left">
             <div className="grid items-center gap-2 text-center">
@@ -48,8 +45,10 @@ export function HomePage() {
           </div>
         </section>
 
+        <ElectricServices />
         <HeatingServices />
 
+        <Feedback />
         <section className="grid items-center gap-6">
           <div className="container grid items-center gap-6 text-center md:text-left">
             <div className="grid items-center gap-2">
@@ -106,7 +105,7 @@ export function HomePage() {
             <h2 className="text-3xl font-bold tracking-tight">Encuentranos aqui</h2>
           </div>
           <div className="relative rounded-lg aspect-[2/1]">
-            {/* <MapComponent /> */}
+            <MapComponent />
           </div>
         </section>
 
@@ -117,7 +116,6 @@ export function HomePage() {
           <ContactInfo />
         </section>
 
-        <Feedback />
 
       </main>
       <footer className="grid items-center py-12">
