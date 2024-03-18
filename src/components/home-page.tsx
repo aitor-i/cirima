@@ -13,7 +13,12 @@ import { HeatingServices } from "./services/HeatingServices/HeatingServices"
 import dynamic from "next/dynamic"
 import ElectricServices from "./services/ElectricServices/ElectricServices"
 import ContactInfo from "./ContactInfo/ContactInfo"
+import Feedback from "./FeedBack/Feedback"
 
+const dict = {
+  description: "Somos una empresa que está dedicada desde hace más de 40 años al mantenimiento de instalaciones de calefacción, agua caliente sanitaria y a trabajos de electricidad, tanto en instalaciones nuevas como reparaciones. ontamos con la certificación <b>ISO 9001 </b> y pertenecemos a la <b>Asociación de Mantenedores de calor y frío de Navarra </b>."
+
+}
 
 const ContactForm = dynamic(() => import('./ContactForm/ContactForm'), { ssr: false })
 const MapComponent = dynamic(() => import('./MapComponent/MapComponent'), { ssr: false })
@@ -32,8 +37,7 @@ export function HomePage() {
               <h2 className="text-3xl md:text-6xl font-bold tracking-tight">Cirima</h2>
             </div>
             <p className="mx-auto md:text-xl max-w-3xl text-gray-500 md:text-left">
-              Somos una empresa que está dedicada desde hace más de 40 años al mantenimiento de instalaciones de calefacción, agua caliente sanitaria y a trabajos de electricidad, tanto en instalaciones nuevas como reparaciones.
-              Contamos con la certificación <b>ISO 9001 </b> y pertenecemos a la <b>Asociación de Mantenedores de calor y frío de Navarra </b>.
+              {dict.description}
             </p>
             <Link
               className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border  border-gray-200 bg-blue-200 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
@@ -113,41 +117,7 @@ export function HomePage() {
           <ContactInfo />
         </section>
 
-        <section className="grid items-center gap-6">
-          <div className="grid items-center mb-4 gap-2">
-            <StarIcon />
-            <h2 className="text-3xl font-bold tracking-tight">La satisfaccion de nuestros clientes </h2>
-          </div>
-          <div className="container">
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card className="grid items-center gap-4 px-6 py-6">
-                <CardContent className="text-center">
-                  <div className="mx-auto w-12 h-12 text-2xl" />
-                  <blockquote className="mt-4 text-lg font-medium text-gray-500">
-                    Son muy atentos y tienen remanentes de cosas desaparecidas o difíciles de encontrar
-                  </blockquote>
-                </CardContent>
-                <CardFooter className="flex flex-col gap-2 text-sm">
-                  <div className="font-medium">Juan Alfonso Revenga Caso</div>
-                  <div className="text-gray-500">Reseñas de Google</div>
-                </CardFooter>
-              </Card>
-              <Card className="grid items-center gap-4 px-6 py-6">
-                <CardContent className="text-center">
-                  <div className="mx-auto w-12 h-12 text-2xl" />
-                  <blockquote className="mt-4 text-lg font-medium text-gray-500">
-                    Muy buena atención, consejos y explicaciones , tanto del personal de tienda como del técnico que acudió a mi domicilio.
-                  </blockquote>
-                </CardContent>
-                <CardFooter className="flex flex-col gap-2 text-sm">
-                  <div className="font-medium">Angel Fernåndez Gavilån</div>
-                  <div className="text-gray-500">Reseñas de Google</div>
-                </CardFooter>
-              </Card>
-            </div>
-          </div>
-        </section>
-
+        <Feedback />
 
       </main>
       <footer className="grid items-center py-12">
