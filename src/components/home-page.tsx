@@ -6,8 +6,9 @@ import Header from "./Header/Header"
 import certificadoER from '@/../public/certificado-er-cirima.jpg'
 import certificadoIqnet from '@/../public/certificado-iqnet.jpg'
 import ebara from '@/../public/ebara-logo.jpg'
+import calefacioneFotot from '@/../public/calefaccion-y-agua-caliente.jpg'
 import arc from '@/../public/logo-arc.jpg'
-import { CheckIcon, LocateIcon, MailIcon, PhoneIcon, SettingsIcon, StarIcon, WrenchIcon } from "./Icons/Icons"
+import { CheckIcon, MountainIcon, LocateIcon, MailIcon, PhoneIcon, SettingsIcon, StarIcon, WrenchIcon } from "./Icons/Icons"
 import { HeatingServices } from "./services/HeatingServices/HeatingServices"
 
 import dynamic from "next/dynamic"
@@ -28,6 +29,27 @@ export function HomePage() {
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
       <Header />
       <main className="grid items-center gap-12">
+        <section>
+          <div className="relative aspect-[2/1]">
+            <Image
+              alt="Hero"
+              className="object-cover w-full rounded-t-2xl"
+              height={600}
+              src={calefacioneFotot}
+              width={1200}
+              placeholder='blur'
+            />
+            <div className="absolute inset-0 flex items-center justify-center p-6 text-center bg-black bg-opacity-50 backdrop-blur-sm">
+              <div className="grid gap-6">
+                <h1 className="text-4xl lg:text-8xl font-bold tracking-tight text-gray-100">Cirima</h1>
+                <p className="mx-auto max-w-2xl lg:text-3xl text-gray-200">
+                  Mantenimientos & Reparaciones.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </section>
         <section className=" my-40 md:mx-32 grid items-center gap-6">
           <div className="container grid items-center gap-8 text-center md:text-left">
             <div className="grid items-center gap-2 text-center">
