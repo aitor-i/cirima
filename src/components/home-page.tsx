@@ -18,7 +18,6 @@ import Feedback from "./FeedBack/Feedback"
 
 const dict = {
   description: "Somos una empresa que está dedicada desde hace más de 40 años al mantenimiento de instalaciones de calefacción, agua caliente sanitaria y a trabajos de electricidad, tanto en instalaciones nuevas como reparaciones. ontamos con la certificación <b>ISO 9001 </b> y pertenecemos a la <b>Asociación de Mantenedores de calor y frío de Navarra </b>."
-
 }
 
 const ContactForm = dynamic(() => import('./ContactForm/ContactForm'), { ssr: false })
@@ -29,7 +28,7 @@ export function HomePage() {
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
       <Header />
       <main className="grid items-center gap-12">
-        <section>
+        <section className="overflow-hidden rounded-2xl">
           <div className="relative aspect-[2/1]">
             <Image
               alt="Hero"
@@ -45,21 +44,26 @@ export function HomePage() {
                 <p className="mx-auto max-w-2xl lg:text-3xl text-gray-200">
                   Mantenimientos & Reparaciones.
                 </p>
+                <Link
+                  className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border  border-gray-200 bg-blue-200 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+                  href="mailto:cirima@cirima.es"
+                >
+                  Contactanos
+                </Link>
               </div>
             </div>
           </div>
-
         </section>
         <section className=" my-40 md:mx-32 grid items-center gap-6">
           <div className="container grid items-center gap-8 text-center md:text-left">
             <div className="grid items-center gap-2 text-center">
-              <h2 className="text-3xl md:text-6xl font-bold tracking-tight">Cirima</h2>
+              <h2 className="text-3xl md:text-6xl font-bold tracking-tight">Sobre nosotros</h2>
             </div>
             <p className="mx-auto md:text-xl max-w-3xl text-gray-500 md:text-left">
               {dict.description}
             </p>
             <Link
-              className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border  border-gray-200 bg-blue-200 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+              className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border  border-gray-200 bg-blue-500 text-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-blue-600 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
               href="mailto:cirima@cirima.es"
             >
               Contactanos

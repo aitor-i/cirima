@@ -4,6 +4,7 @@ import React from 'react'
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { LocateIcon, MailIcon } from '../Icons/Icons'
 
 export default function ContactForm() {
 
@@ -46,6 +47,8 @@ export default function ContactForm() {
 
   return (
     <div className="mt-8">
+      <MailIcon />
+      <h2 className="text-3xl font-bold mb-4 tracking-tight">Contactanos</h2>
       <form className="grid gap-4" onSubmit={onSubmitHandler}>
         <div className="grid md:grid-cols-2 gap-4">
           <Input name='name' placeholder="Nombre" />
@@ -54,7 +57,7 @@ export default function ContactForm() {
         <Input name='email' placeholder="Email" type="email" />
         <Input name='phone' placeholder="Telefono (Opcional)" />
         <Textarea name='message' className="min-h-[10rem]" placeholder="Mensaje" />
-        <Button type="submit">Enviar</Button>
+        <Button className='bg-blue-500 hover:bg-blue-600' type="submit">Enviar</Button>
       </form>
     </div>
   )

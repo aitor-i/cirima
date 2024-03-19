@@ -52,7 +52,7 @@ export default function ElectricServices() {
           </div>
         </div>
       </section>
-      <section className="my-40 md:mx-32 grid items-center gap-6">
+      <section className="my-40 grid items-center gap-6">
         <div className="container grid items-center gap-6 text-center md:text-left">
           <div className="grid items-center gap-2">
             <SettingsIcon className="w-8 h-8 flex-shrink-0" />
