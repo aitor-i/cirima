@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="./cropped-logo-cirima2-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="./logo-cirima.png" type="image/png" sizes="32x32" />
       </head>
 
       <body className={montserrat.className}>{children}</body>
