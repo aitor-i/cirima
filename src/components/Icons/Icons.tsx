@@ -145,6 +145,41 @@ export function LocateIcon(props: any) {
   )
 }
 
+export const TelephoneIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" // Adjust the width as needed
+    height="24" // Adjust the height as needed
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .63 3.76 2.74 5.87s4.87 2.61 5.87 2.74A2 2 0 0 1 22 16.92z" />
+  </svg>
+);
+
+
+
+export const MountainIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="50" // Set the width as needed
+    height="50" // Set the height as needed
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21 20H3L10.5 4.5L13.5 9L16.5 3L21 20Z" /> {/* Mountain shape */}
+    <path d="M12 20L10.5 4.5L13.5 9L16.5 3" /> {/* Optional detail lines */}
+  </svg>
+);
+
 
 export function PhoneIcon(props: any) {
   return (
