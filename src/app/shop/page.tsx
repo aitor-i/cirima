@@ -5,7 +5,6 @@ import image from '@/../public/instal-electricas.jpg'
 export default function page() {
   return (
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
-      <Header />
       <main className="grid  gap-12 py-8">
         <section >
           <h2 className="text-2xl md:text-5xl font-bold tracking-tight">Tienda</h2>

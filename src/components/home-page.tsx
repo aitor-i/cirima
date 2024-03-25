@@ -19,7 +19,6 @@ const dict = {
 export function HomePage() {
   return (
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
-      <Header />
       <main className="grid items-center gap-12">
         <Hero />
         <AboutUs description={dict.description} />
