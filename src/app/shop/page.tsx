@@ -1,7 +1,6 @@
-import Header from "@/components/Header/Header"
 import ProductCard from "./ProductCard"
 import { products } from "./items"
-import image from '@/../public/instal-electricas.jpg'
+import image from '@/../public/rodamiento.jpeg'
 export default function page() {
   return (
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
