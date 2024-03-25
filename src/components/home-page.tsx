@@ -15,6 +15,8 @@ import dynamic from "next/dynamic"
 import ElectricServices from "./services/ElectricServices/ElectricServices"
 import ContactInfo from "./ContactInfo/ContactInfo"
 import Feedback from "./FeedBack/Feedback"
+import Hero from "./Sections/Hero/Hero"
+import AboutUs from "./Sections/AboutUs/AboutUs"
 
 const dict = {
   description: "Somos una empresa que está dedicada desde hace más de 40 años al mantenimiento de instalaciones de calefacción, agua caliente sanitaria y a trabajos de electricidad, tanto en instalaciones nuevas como reparaciones. ontamos con la certificación <b>ISO 9001 </b> y pertenecemos a la <b>Asociación de Mantenedores de calor y frío de Navarra </b>."
@@ -28,49 +30,9 @@ export function HomePage() {
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
       <Header />
       <main className="grid items-center gap-12">
-        <section className="overflow-hidden rounded-2xl">
-          <div className="relative aspect-[2/1]">
-            <Image
-              alt="Hero"
-              className="object-cover w-full rounded-t-2xl"
-              height={600}
-              src={calefacioneFotot}
-              width={1200}
-              placeholder='blur'
-            />
-            <div className="absolute inset-0 flex items-center justify-center p-6 text-center bg-black bg-opacity-50 backdrop-blur-sm">
-              <div className="grid gap-6">
-                <h1 className="text-4xl lg:text-8xl font-bold tracking-tight text-gray-100">Cirima</h1>
-                <p className="mx-auto max-w-2xl lg:text-3xl text-gray-200">
-                  Mantenimientos & Reparaciones.
-                </p>
-                <Link
-                  className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border  border-gray-200 bg-blue-200 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                  href="mailto:cirima@cirima.es"
-                >
-                  Contactanos
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className=" my-40 md:mx-32 grid items-center gap-6">
-          <div className="container grid items-center gap-8 text-center md:text-left">
-            <div className="grid items-center gap-2 text-center">
-              <h2 className="text-3xl md:text-6xl font-bold tracking-tight">Sobre nosotros</h2>
-            </div>
-            <p className="mx-auto md:text-xl max-w-3xl text-gray-500 md:text-left">
-              {dict.description}
-            </p>
-            <Link
-              className="inline-flex h-10 md:w-40 place-self-center items-center justify-center rounded-md border  border-gray-200 bg-blue-500 text-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-blue-600 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-              href="mailto:cirima@cirima.es"
-            >
-              Contactanos
-            </Link>
-          </div>
-        </section>
+        <Hero />
 
+        <AboutUs description={dict.description} />
         <ElectricServices />
         <HeatingServices />
 
