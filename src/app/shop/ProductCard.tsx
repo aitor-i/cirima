@@ -1,6 +1,7 @@
 import { PhoneIcon } from "@/components/Icons/Icons"
 import { Button } from "@/components/ui/button"
 import Image, { StaticImageData } from "next/image"
+import Link from "next/link"
 
 interface Props {
 
@@ -12,12 +13,12 @@ interface Props {
 
 export default function ProductCard({ image, description, price, title }: Props) {
   return (
-    <div className="w-full max-w-sm mx-auto bg-blue-50 rounded-md shadow-md overflow-hidden">
+    <Link href={"/shop/777"} className="w-full max-w-sm mx-auto bg-blue-50 rounded-md shadow-md overflow-hidden">
       <div className="flex items-end justify-end h-56 w-full bg-cover">
         <span className="h-full w-full border">
           <Image src={image} alt={title} className="w-full h-full object-cover" />
         </span>
-        <Button className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 absolute hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+        <Button className="z-10 p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 absolute hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
           <PhoneIcon />
         </Button>
       </div>
@@ -28,7 +29,7 @@ export default function ProductCard({ image, description, price, title }: Props)
           {description}
         </p>
       </div>
-    </div>
+    </Link>
   )
 }
 
