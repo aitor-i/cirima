@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Cirima - Instalaciones electricas y de calefaccion",
   description: "Instalaciones electricas y de calefacion en Pamplona",
   keywords: ["Electricista", "Calderas", "Pamplona"],
+  icons: [{ href: "./logo-cirima.png", url: "./logo-cirima.png" }]
 };
 
 export default function RootLayout({
@@ -18,12 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html className={montserrat.className} lang="en">
-      <head>
-        <link rel="icon" href="./logo-cirima.png" type="image/png" sizes="32x32" />
-      </head>
+      <body className={montserrat.className}>{children}
 
-      <body className={montserrat.className}>{children}</body>
-      <Footer />
+        <Footer />
+      </body>
     </html>
   );
 }
