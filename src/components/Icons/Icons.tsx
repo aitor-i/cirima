@@ -64,6 +64,7 @@ export function WrenchIcon(props: any) {
 export function StarIcon(props: any) {
   return (
     <svg
+      className="text-yellow-500"
       {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
