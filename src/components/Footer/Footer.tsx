@@ -9,6 +9,9 @@ export default function Footer() {
           <Link className="font-medium" href="/">
             Home
           </Link>
+          <Link className="font-medium" href="/shop">
+            Tienda
+          </Link>
         </nav>
         <div className="grid gap-2 text-sm">
           <span className="opacity-70">© 2024 Cirima</span>
