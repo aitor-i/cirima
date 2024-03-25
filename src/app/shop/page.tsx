@@ -10,7 +10,7 @@ export default function page() {
           <h2 className="text-2xl md:text-5xl font-bold tracking-tight">Tienda</h2>
           <p>Tenemos todo tipod de articulos para reparacion o sustitucion...</p>
         </section>
-        <section className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+        <section className="grid grid-cols-1  gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {products.map(product => <ProductCard
             key={product.name}
             description={product.description}

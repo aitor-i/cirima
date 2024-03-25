@@ -13,7 +13,7 @@ interface Props {
 
 export default function ProductCard({ image, description, price, title }: Props) {
   return (
-    <Link href={"/shop/777"} className="w-full max-w-sm mx-auto bg-blue-50 rounded-md shadow-md overflow-hidden">
+    <Link href={"/shop/777"} className="w-full flex flex-col items-start max-w-sm mx-auto bg-blue-50 rounded-md shadow-md overflow-hidden">
       <div className="flex items-end justify-end h-56 w-full bg-cover">
         <span className="h-full w-full border">
           <Image src={image} alt={title} className="w-full h-full object-cover" />
