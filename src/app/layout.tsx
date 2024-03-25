@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer/Footer";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -16,12 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className={montserrat.className} lang="en">
       <head>
         <link rel="icon" href="./logo-cirima.png" type="image/png" sizes="32x32" />
       </head>
 
       <body className={montserrat.className}>{children}</body>
+      <Footer />
     </html>
   );
 }

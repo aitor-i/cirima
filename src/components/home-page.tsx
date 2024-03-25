@@ -30,29 +30,6 @@ export function HomePage() {
         <Locate />
         <Contact />
       </main>
-
-      <footer className="grid items-center py-12">
-        <div className="container grid items-center gap-4 text-center sm:text-left">
-          <nav className="flex flex-col gap-2 text-sm">
-            <Link className="font-medium" href="#">
-              Home
-            </Link>
-            <Link className="font-medium" href="#">
-              Services
-            </Link>
-            <Link className="font-medium" href="#">
-              Testimonials
-            </Link>
-            <Link className="font-medium" href="#">
-              Contact
-            </Link>
-          </nav>
-          <div className="grid gap-2 text-sm">
-            <span className="opacity-70">© 2023 Electrician</span>
-            <span className="opacity-70">Terms of Service | Privacy Policy</span>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
