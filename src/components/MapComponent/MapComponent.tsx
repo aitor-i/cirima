@@ -17,10 +17,12 @@ const markerPosition = {
   lng: -1.6542928534447172
 };
 
+const key = process.env.NEXT_PUBLIC_GMAP_KEY;
+
 const MapComponent = () => {
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyBo_gR45tUWdYr0JlFdbeVV_on8TUTqsOw" // Replace with your Google Maps API key
+      googleMapsApiKey={key?.toString() ?? ""}
     >
       <GoogleMap
 
@@ -32,7 +34,7 @@ const MapComponent = () => {
           position={markerPosition}
         />
       </GoogleMap>
-    </LoadScript>
+    </LoadScript >
   )
 }
 
