@@ -12,6 +12,9 @@ export default function Footer() {
           <Link className="font-medium" href="/shop">
             Tienda
           </Link>
+          <Link className="font-medium" href="/login">
+            Acceso
+          </Link>
         </nav>
         <div className="grid gap-2 text-sm">
           <span className="opacity-70">© 2024 Cirima</span>
