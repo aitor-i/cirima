@@ -17,7 +17,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-h1 {
+.text-gradient {
     background: linear-gradient(to bottom, white, lightgrey);
     -webkit-background-clip: text;
     background-clip: text;
