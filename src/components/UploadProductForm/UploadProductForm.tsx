@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from '../ui/textarea'
 import fs from 'fs'
 import { sql } from "@vercel/postgres";
+import { revalidatePath } from 'next/cache'
 
 
 export default async function UploadProductForm() {
@@ -30,8 +31,10 @@ export default async function UploadProductForm() {
           }
         })
 
-        const imagePath = `public/${imageName}`
+        const imagePath = `/${imageName}`
         const res = await sql`INSERT INTO public.products (name, description, price, specifications, imagePath) VALUES (${name}, ${description}, ${price}, ${spec}, ${imagePath})`;
+        revalidatePath("/shop")
+        console.log(res)
 
       }
     } catch (error) {
