@@ -1,36 +1,54 @@
-'use client'
 import React from 'react'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Textarea } from '../ui/textarea'
+import fs from 'fs'
+import { sql } from "@vercel/postgres";
 
-export default function UploadProductForm() {
-  const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
 
-    const formData = new FormData(event.currentTarget)
+export default async function UploadProductForm() {
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-    const url = new URL(`${baseUrl}/api/add-product`);
+  const onSubmitHandler = async (formData: FormData) => {
+    'use server'
+    try {
+      let image = formData.get('image')?.valueOf() as File;
 
-    const response = await fetch(url, {
-      method: 'POST',
-      body: formData,
-    });
+      const name = formData.get("product-name")?.toString();
+      const description = formData.get("product-description")?.toString();
+      const price = formData.get("price")?.toString();
+      const spec = formData.get("spec")?.toString();
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+
+      if (image) {
+        const imageName = image?.name.toString();
+        const stram = fs.createWriteStream(`public/${imageName}`);
+        const buffer = await image.arrayBuffer();
+
+        stram.write(Buffer.from(buffer), (error) => {
+          if (error) {
+            console.log(error)
+          }
+        })
+
+        const imagePath = `public/${imageName}`
+        const res = await sql`INSERT INTO public.products (name, description, price, specifications, imagePath) VALUES (${name}, ${description}, ${price}, ${spec}, ${imagePath})`;
+
+      }
+    } catch (error) {
+
+      console.log(error)
     }
+
   }
 
   return (
-    <form className="grid gap-4" onSubmit={onSubmitHandler}>
+    <form className="grid gap-4" action={onSubmitHandler}>
       <Input name='product-name' placeholder="Producto" type="text" />
       <Input name='product-description' placeholder="Descripcion" type="text" />
       <Input name='price' placeholder="Precio" type="text" />
       <Textarea name='spec' className="min-h-[10rem]" placeholder="Especificaciones" />
       <Input name='image' placeholder="Imagen" type="file" />
-      <Button className='bg-blue-500 hover:bg-blue-600' type="submit">Añadir</Button>
+      <Button className='bg-blue-500 hover:bg-blue-600'>Añadir</Button>
     </form>
   )
 }
