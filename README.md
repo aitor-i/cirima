@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+```markdown
+# Cirima - Plumbing Store
+
+Welcome to the GitHub repository of Cirima, a web-based storefront for all your plumbing needs. Built with Next.js, Cirima offers a seamless online shopping experience for plumbing supplies, tools, and accessories. Whether you're a professional plumber or a DIY enthusiast, Cirima has everything you need to get the job done.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+
+Ensure you have npm installed on your machine. To install npm, follow the instructions here: [Installing npm](https://www.npmjs.com/get-npm).
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/yourusername/cirima.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Start the development server
+   ```sh
+   npm run dev
+   ```
+   Your site should now be running on [http://localhost:3000](http://localhost:3000).
+
+## Usage
+
+Cirima is designed to be straightforward and user-friendly. Browse through our extensive catalog of plumbing products, add items to your cart, and check out with ease. For any specific functionalities or usage tips, please refer to the website's help section or contact us directly.
+
+## Contributing
+
+Currently, Cirima is not open for external contributions. However, we appreciate your interest and suggest you keep an eye on this repository for future updates on contribution guidelines.
+
+## Contact
+
+If you have any questions or suggestions, please feel free to contact us at [contact@aitoribarra.com](mailto:contact@aitoribarra.com).
+
+## Acknowledgements
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [npm](https://www.npmjs.com/)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to adjust the content to better fit your project's needs or add any additional sections you think might be helpful. If you decide you want sections on contributions or licensing later on, just let me know!
