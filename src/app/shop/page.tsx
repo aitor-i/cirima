@@ -8,7 +8,6 @@ export default async function page() {
   }
 
   const products = await getProducts()
-  console.log(products)
 
   return (
     <div className="grid grid-rows-[auto 1fr auto] gap-6 min-h-screen px-4 sm:px-6 lg:px-8">
