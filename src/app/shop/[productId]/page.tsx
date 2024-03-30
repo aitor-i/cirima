@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PhoneIcon } from "@/components/Icons/Icons";
-import { sql } from "@vercel/postgres";
+import { getProduct } from "@/serverActions/products";
 
 interface Props {
   params: {
@@ -9,11 +9,6 @@ interface Props {
   }
 }
 export default async function page({ params }: Props) {
-  async function getProduct(id: string) {
-    'use server'
-    const products = await sql`SELECT * FROM products where id = ${id}`;
-    return products.rows[0]
-  }
 
   const product = await getProduct(params.productId);
   return (
