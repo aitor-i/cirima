@@ -46,10 +46,10 @@ export default async function UploadProductForm() {
 
   return (
     <form className="grid gap-4" action={onSubmitHandler}>
-      <Input name='product-name' placeholder="Producto" type="text" />
-      <Input name='product-description' placeholder="Descripcion" type="text" />
-      <Input name='price' placeholder="Precio" type="text" />
-      <Textarea name='spec' className="min-h-[10rem]" placeholder="Especificaciones" />
+      <Input name='product-name' maxLength={25} placeholder="Producto" type="text" />
+      <Input name='product-description' maxLength={25} placeholder="Descripcion" type="text" />
+      <Input name='price' placeholder="Precio" maxLength={10} type="text" />
+      <Textarea maxLength={255} name='spec' className="min-h-[10rem]" placeholder="Especificaciones" />
       <Input name='image' placeholder="Imagen" type="file" />
       <Button className='bg-blue-500 hover:bg-blue-600'>Añadir</Button>
     </form>
