@@ -1,51 +1,21 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Textarea } from '../ui/textarea'
-import fs from 'fs'
-import { sql } from "@vercel/postgres";
-import { revalidatePath } from 'next/cache'
+import { onSubmitHandler } from '@/serverActions/products'
 
 
 export default async function UploadProductForm() {
 
-  const onSubmitHandler = async (formData: FormData) => {
-    'use server'
-    try {
-      let image = formData.get('image')?.valueOf() as File;
+  const formRef = useRef<HTMLFormElement>(null)
 
-      const name = formData.get("product-name")?.toString();
-      const description = formData.get("product-description")?.toString();
-      const price = formData.get("price")?.toString();
-      const spec = formData.get("spec")?.toString();
-
-
-      if (image) {
-        const imageName = image?.name.toString();
-        const stram = fs.createWriteStream(`public/${imageName}`);
-        const buffer = await image.arrayBuffer();
-
-        stram.write(Buffer.from(buffer), (error) => {
-          if (error) {
-            console.log(error)
-          }
-        })
-
-        const imagePath = `/${imageName}`
-        const res = await sql`INSERT INTO public.products (name, description, price, specifications, imagePath) VALUES (${name}, ${description}, ${price}, ${spec}, ${imagePath})`;
-        revalidatePath("/shop")
-        console.log(res)
-
-      }
-    } catch (error) {
-
-      console.log(error)
-    }
-
-  }
 
   return (
-    <form className="grid gap-4" action={onSubmitHandler}>
+    <form className="grid gap-4" ref={formRef} action={formData => {
+      formRef.current?.reset()
+      onSubmitHandler(formData)
+    }}>
       <Input name='product-name' maxLength={25} placeholder="Producto" type="text" />
       <Input name='product-description' maxLength={25} placeholder="Descripcion" type="text" />
       <Input name='price' placeholder="Precio" maxLength={10} type="text" />
