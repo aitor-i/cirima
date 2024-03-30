@@ -1,11 +1,6 @@
+import { getProducts } from "@/serverActions/products";
 import ProductCard from "./ProductCard"
-import { sql } from "@vercel/postgres";
 export default async function page() {
-  async function getProducts() {
-    'use server'
-    const products = await sql`SELECT * FROM products`;
-    return products.rows
-  }
 
   const products = await getProducts()
 
