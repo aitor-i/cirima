@@ -2,12 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { PhoneIcon } from "@/components/Icons/Icons";
 import { getProduct } from "@/serverActions/products";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: {
     productId: string
   }
 }
+
+export async function generateMetadata({ params }: Props) {
+
+  const product = await getProduct(params.productId);
+  if (!product) notFound();
+  return {
+    title: `Cirima - ${product.name}`,
+    description: product.description,
+    keywords: ["Electricista", "Calderas", "Pamplona", product.name],
+  };
+}
+
 export default async function page({ params }: Props) {
 
   const product = await getProduct(params.productId);
