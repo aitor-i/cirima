@@ -39,21 +39,13 @@ export const onSubmitHandler = async (formData: FormData) => {
 
 
     if (image) {
-      const imageName = image?.name.toString();
-      const stram = fs.createWriteStream(`/${imageName}`);
-      const buffer = await image.arrayBuffer();
+      const arrayBuffer = await image.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      const base64 = buffer.toString('base64')
 
+      console.log("BASE 64", base64)
 
-      stram.write(Buffer.from(buffer), (error) => {
-        if (error) {
-          console.log(error)
-        }
-      })
-
-      const imagePath = `/${imageName}`
-      const b64Img = convertImageToBase64Sync(`/${imageName}`)
-      console.log(b64Img)
-      const res = await sql`INSERT INTO public.products (name, description, price, specifications, imagePath) VALUES (${name}, ${description}, ${price}, ${spec}, ${imagePath})`;
+      const res = await sql`INSERT INTO public.products (name, description, price, specifications, imagePath) VALUES (${name}, ${description}, ${price}, ${spec}, ${base64})`;
       revalidatePath("/shop",)
       revalidatePath("/dashboard",)
       console.log(res)
