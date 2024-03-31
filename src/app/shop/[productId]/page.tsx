@@ -28,7 +28,7 @@ export default async function page({ params }: Props) {
     <main className="flex-1 py-6 px-4 sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-2 gap-8">
         <div className="w-full  aspect-square">
-          <Image src={product.imagepath} alt={product.name} width={800} height={800} className="h-full rounded-lg w-full object-cover" />
+          <Image src={`data:image/jpeg;base64,${product.imagepath}`} alt={product.name} width={800} height={800} className="h-full rounded-lg w-full object-cover" />
         </div>
         <div className="py-4">
           <h2 className="text-3xl font-bold mb-2">{product.name}</h2>
