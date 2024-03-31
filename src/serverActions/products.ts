@@ -40,7 +40,7 @@ export const onSubmitHandler = async (formData: FormData) => {
 
     if (image) {
       const imageName = image?.name.toString();
-      const stram = fs.createWriteStream(`public/${imageName}`);
+      const stram = fs.createWriteStream(`/${imageName}`);
       const buffer = await image.arrayBuffer();
 
 
@@ -51,7 +51,7 @@ export const onSubmitHandler = async (formData: FormData) => {
       })
 
       const imagePath = `/${imageName}`
-      const b64Img = convertImageToBase64Sync(`public/${imageName}`)
+      const b64Img = convertImageToBase64Sync(`/${imageName}`)
       console.log(b64Img)
       const res = await sql`INSERT INTO public.products (name, description, price, specifications, imagePath) VALUES (${name}, ${description}, ${price}, ${spec}, ${imagePath})`;
       revalidatePath("/shop",)
