@@ -1,3 +1,4 @@
+import ProductsLists from '@/components/ProductsList/ProductsLists'
 import UploadProductForm from '@/components/UploadProductForm/UploadProductForm'
 import React from 'react'
 
@@ -11,8 +12,10 @@ export default function page() {
         </div>
         <div>
           <UploadProductForm />
+
         </div>
       </div>
+      <ProductsLists />
     </section>
   )
 }
