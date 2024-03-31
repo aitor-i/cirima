@@ -55,17 +55,4 @@ export const onSubmitHandler = async (formData: FormData) => {
 
     console.log(error)
   }
-
 }
-const convertImageToBase64Sync = (filePath: string) => {
-  try {
-    // Read file synchronously
-    const data = fs.readFileSync(filePath);
-    // Convert to Base64
-    const base64Image = data.toString('base64');
-    console.log(base64Image);
-    // Use the Base64 string as needed
-  } catch (err) {
-    console.error('Error reading the file:', err);
-  }
-};
