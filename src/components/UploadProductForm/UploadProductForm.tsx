@@ -12,6 +12,11 @@ export default async function UploadProductForm() {
 
   const formRef = useRef<HTMLFormElement>(null)
   const actionHandler = (formData: FormData) => {
+    let image = formData.get('image')?.valueOf() as File;
+    const maxSizeInBytes = 10 * 1024; // 10KB in bytes
+    if (image.size > maxSizeInBytes) {
+      return
+    }
     formRef.current?.reset()
     onSubmitHandler(formData)
   }
