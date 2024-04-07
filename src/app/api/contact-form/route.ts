@@ -7,7 +7,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export const dynamic = 'force-dynamic' // defaults to auto
 
 export async function POST(req: NextRequest) {
-  // Perform your logic here
   const body = await req.json();
 
   const { name, surname, email, message } = body
