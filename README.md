@@ -1,4 +1,4 @@
-```markdown
+````markdown
 # Cirima - Plumbing Store
 
 Welcome to the GitHub repository of Cirima, a web-based storefront for all your plumbing needs. Built with Next.js, Cirima offers a seamless online shopping experience for plumbing supplies, tools, and accessories. Whether you're a professional plumber or a DIY enthusiast, Cirima has everything you need to get the job done.
@@ -17,6 +17,8 @@ Ensure you have npm installed on your machine. To install npm, follow the instru
    ```sh
    git clone https://github.com/yourusername/cirima.git
    ```
+````
+
 2. Install NPM packages
    ```sh
    npm install
@@ -43,6 +45,8 @@ If you have any questions or suggestions, please feel free to contact us at [con
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [npm](https://www.npmjs.com/)
+
 ```
 
 Feel free to adjust the content to better fit your project's needs or add any additional sections you think might be helpful. If you decide you want sections on contributions or licensing later on, just let me know!
+```

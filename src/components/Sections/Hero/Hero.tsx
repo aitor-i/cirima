@@ -1,7 +1,7 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import Image from 'next/image'
-import calefacioneFotot from '@/../public/calefaccion-y-agua-caliente.jpg'
+import Image from "next/image";
+import calefacioneFotot from "@/../public/calefaccion-y-agua-caliente.jpg";
 
 export default function Hero() {
   return (
@@ -13,11 +13,13 @@ export default function Hero() {
           height={600}
           src={calefacioneFotot}
           width={1200}
-          placeholder='blur'
+          placeholder="blur"
         />
         <div className="absolute inset-0 flex items-center justify-center p-6 text-center bg-black bg-opacity-50 backdrop-blur-sm">
           <div className="grid gap-6">
-            <h1 className="text-4xl lg:text-8xl font-bold tracking-tight text-gray-100">Cirima</h1>
+            <h1 className="text-4xl lg:text-8xl font-bold tracking-tight text-gray-100">
+              Cirima
+            </h1>
             <p className="mx-auto max-w-2xl lg:text-3xl text-gray-200">
               Mantenimientos & Reparaciones.
             </p>
@@ -31,5 +33,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

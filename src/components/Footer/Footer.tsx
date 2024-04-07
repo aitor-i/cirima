@@ -1,8 +1,7 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Footer() {
   return (
-
     <footer className="grid items-center px-4 sm:px-6 lg:px-8 bg-blue-700 text-white font-bold py-12">
       <div className="container grid items-center gap-4 text-center sm:text-left">
         <nav className="flex flex-col gap-2 text-sm">
@@ -24,5 +23,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

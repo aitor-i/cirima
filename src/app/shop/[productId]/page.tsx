@@ -6,12 +6,11 @@ import { notFound } from "next/navigation";
 
 interface Props {
   params: {
-    productId: string
-  }
+    productId: string;
+  };
 }
 
 export async function generateMetadata({ params }: Props) {
-
   const product = await getProduct(params.productId);
   if (!product) notFound();
   return {
@@ -22,13 +21,18 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function page({ params }: Props) {
-
   const product = await getProduct(params.productId);
   return (
     <main className="flex-1 py-6 px-4 sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-2 gap-8">
         <div className="w-full  aspect-square">
-          <Image src={`data:image/jpeg;base64,${product.imagepath}`} alt={product.name} width={800} height={800} className="h-full rounded-lg w-full object-cover" />
+          <Image
+            src={`data:image/jpeg;base64,${product.imagepath}`}
+            alt={product.name}
+            width={800}
+            height={800}
+            className="h-full rounded-lg w-full object-cover"
+          />
         </div>
         <div className="py-4">
           <h2 className="text-3xl font-bold mb-2">{product.name}</h2>
@@ -40,7 +44,8 @@ export default async function page({ params }: Props) {
           </ul>
           <Link
             className=" text-gray-50 flex gap-2 h-10 md:w-40 place-self-center items-center justify-center rounded-md border  border-gray-200 bg-blue-500 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-blue-600 hover:text-gray-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-blue-800 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-            href="#">
+            href="#"
+          >
             <PhoneIcon />
             Reservalo
           </Link>
@@ -53,5 +58,5 @@ export default async function page({ params }: Props) {
         <h2 className="text-2xl font-bold mb-4">Related Products</h2>
       </div>
     </main>
-  )
+  );
 }

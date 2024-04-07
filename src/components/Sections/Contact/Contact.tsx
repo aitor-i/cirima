@@ -1,5 +1,5 @@
-import ContactForm from '@/components/ContactForm/ContactForm'
-import ContactInfo from '@/components/ContactInfo/ContactInfo'
+import ContactForm from "@/components/ContactForm/ContactForm";
+import ContactInfo from "@/components/ContactInfo/ContactInfo";
 
 export default function Contact() {
   return (
@@ -9,5 +9,5 @@ export default function Contact() {
       </div>
       <ContactInfo />
     </section>
-  )
+  );
 }

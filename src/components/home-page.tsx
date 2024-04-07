@@ -1,20 +1,20 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import Header from "./Header/Header"
-import { HeatingServices } from "./services/HeatingServices/HeatingServices"
+import Header from "./Header/Header";
+import { HeatingServices } from "./services/HeatingServices/HeatingServices";
 
-import ElectricServices from "./services/ElectricServices/ElectricServices"
-import Feedback from "./FeedBack/Feedback"
-import Hero from "./Sections/Hero/Hero"
-import AboutUs from "./Sections/AboutUs/AboutUs"
-import Certificates from "./Sections/Certificates/Certificates"
-import Locate from "./Sections/Locate/Locate"
-import Contact from "./Sections/Contact/Contact"
+import ElectricServices from "./services/ElectricServices/ElectricServices";
+import Feedback from "./FeedBack/Feedback";
+import Hero from "./Sections/Hero/Hero";
+import AboutUs from "./Sections/AboutUs/AboutUs";
+import Certificates from "./Sections/Certificates/Certificates";
+import Locate from "./Sections/Locate/Locate";
+import Contact from "./Sections/Contact/Contact";
 
 const dict = {
-  description: "Somos una empresa que está dedicada desde hace más de 40 años al mantenimiento de instalaciones de calefacción, agua caliente sanitaria y a trabajos de electricidad, tanto en instalaciones nuevas como reparaciones. ontamos con la certificación <b>ISO 9001 </b> y pertenecemos a la <b>Asociación de Mantenedores de calor y frío de Navarra </b>."
-}
-
+  description:
+    "Somos una empresa que está dedicada desde hace más de 40 años al mantenimiento de instalaciones de calefacción, agua caliente sanitaria y a trabajos de electricidad, tanto en instalaciones nuevas como reparaciones. ontamos con la certificación <b>ISO 9001 </b> y pertenecemos a la <b>Asociación de Mantenedores de calor y frío de Navarra </b>.",
+};
 
 export function HomePage() {
   return (
@@ -30,9 +30,5 @@ export function HomePage() {
         <Contact />
       </main>
     </div>
-  )
+  );
 }
-
-
-
-

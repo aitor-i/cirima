@@ -1,5 +1,5 @@
-import MapComponent from '@/components/MapComponent/MapComponent'
-import { LocateIcon } from 'lucide-react'
+import MapComponent from "@/components/MapComponent/MapComponent";
+import { LocateIcon } from "lucide-react";
 
 export default function Locate() {
   return (
@@ -12,6 +12,5 @@ export default function Locate() {
         <MapComponent />
       </div>
     </section>
-
-  )
+  );
 }

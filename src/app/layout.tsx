@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Cirima - Instalaciones electricas y de calefaccion",
   description: "Instalaciones electricas y de calefacion en Pamplona",
   keywords: ["Electricista", "Calderas", "Pamplona"],
-  icons: [{ href: "./logo-cirima.png", url: "./logo-cirima.png" }]
+  icons: [{ href: "./logo-cirima.png", url: "./logo-cirima.png" }],
 };
 
 export default function RootLayout({
